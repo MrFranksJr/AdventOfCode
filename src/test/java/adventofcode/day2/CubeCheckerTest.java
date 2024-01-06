@@ -1,4 +1,4 @@
-package cubechecker;
+package adventofcode.day2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -58,7 +58,7 @@ class CubeCheckerTest {
         //input
         String input = "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red";
         //expected
-        boolean expectedResult = true;
+        boolean expectedResult = false;
 
         assertEquals(expectedResult, cubeChecker.compareDrawsWithMaxCubes(input));
     }
@@ -81,7 +81,7 @@ class CubeCheckerTest {
     @Test
     void returnTotalIds() {
         //input
-        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/sampleinput.txt");
+        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day2/sampleinput.txt");
         //When
         int totalGameIds = cubeChecker.returnTotalIds(streamSupplier);
         //expected
@@ -90,7 +90,7 @@ class CubeCheckerTest {
     @Test
     void returnTotalIdsFull() {
         //input
-        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/fullinput.txt");
+        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day2/fullinput.txt");
         //When
         int totalGameIds = cubeChecker.returnTotalIds(streamSupplier);
         //expected

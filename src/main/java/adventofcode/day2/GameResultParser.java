@@ -1,4 +1,4 @@
-package cubechecker;
+package adventofcode.day2;
 
 import java.util.Collections;
 import java.util.HashMap;

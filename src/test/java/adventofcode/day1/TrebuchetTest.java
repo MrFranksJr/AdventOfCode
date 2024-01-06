@@ -1,3 +1,5 @@
+package adventofcode.day1;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,31 +34,31 @@ public class TrebuchetTest {
 
     @Test
     void returnsSumsOfMultipleLinesOfInput() {
-        assertEquals(289, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/input.txt")));
+        assertEquals(289, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day1/input.txt")));
     }
 
     @Test
     void returnsSumsOfMultipleLinesOfExampleInput() {
 
-        assertEquals(142, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/exampleInput.txt")));
+        assertEquals(142, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day1/exampleInput.txt")));
     }
 
     @Test
     void returnsSumsOfMultipleLinesOfExampleInput2() {
 
-        assertEquals(281, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/exampleInput2.txt")));
+        assertEquals(281, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day1/exampleInput2.txt")));
     }
 
     @Test
     void returnSumOfFullInput() {
 
-        assertEquals(54265, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/fullInput.txt")));
+        assertEquals(54265, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day1/fullInput.txt")));
     }
 
     @Test
     void checkInputGunnar() {
         //Given
-        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/gunnarInput.txt");
+        Supplier<Stream<String>> streamSupplier = () -> InputFileReader.INSTANCE.readInputFile("src/test/resources/day1/gunnarInput.txt");
         //When
         int calibrateTrebuchet = trebuchet.getCalibrateTrebuchet(streamSupplier);
         //Then
