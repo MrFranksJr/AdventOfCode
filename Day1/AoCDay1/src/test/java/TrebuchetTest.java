@@ -32,7 +32,6 @@ public class TrebuchetTest {
 
     @Test
     void returnsSumsOfMultipleLinesOfInput() {
-
         assertEquals(289, trebuchet.getCalibrateTrebuchet(() -> InputFileReader.INSTANCE.readInputFile("src/test/resources/input.txt")));
     }
 
