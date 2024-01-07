@@ -6,12 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GameResultParser {
-    private static final Map<String, Integer> CUBE_LIMIT;
-
-    static {
-        CUBE_LIMIT = Map.of("red", 12, "green", 13, "blue", 14);
-    }
-
     String returnGameResults(String input) {
         final String gameResults = input.substring(input.indexOf(":") + 1);
         return gameResults.trim();
@@ -44,19 +38,7 @@ public class GameResultParser {
         return drawsInGame;
     }
 
-    public boolean isLessThanAllowedMax(String s) {
-        Map<String, String> drawsInGame = returnDrawsFromGame(s);
-
-        for (Map.Entry<String, String> drawOfGame : drawsInGame.entrySet()) {
-            Map<String, Integer> mapOfDraw = generateHashMapOfDraw(drawOfGame);
-            for (Map.Entry<String, Integer> limitEntry : CUBE_LIMIT.entrySet()) {
-                if (hasMoreCubesThanLimit(limitEntry, mapOfDraw)) return false;
-            }
-        }
-        return true;
-    }
-
-    private static Map<String, Integer> generateHashMapOfDraw(Map.Entry<String, String> drawOfGame) {
+    static Map<String, Integer> generateHashMapOfDraw(Map.Entry<String, String> drawOfGame) {
         Map<String, Integer> colorsAndCount = new HashMap<>();
 
         String[] allColorsInDraw = drawOfGame.getValue().split(", ");
@@ -71,17 +53,5 @@ public class GameResultParser {
             }
         }
         return colorsAndCount;
-    }
-
-    private static boolean hasMoreCubesThanLimit(Map.Entry<String, Integer> limitEntry, Map<String, Integer> mapOfDraw) {
-        String key = limitEntry.getKey();
-        int maxCubes = limitEntry.getValue();
-
-        if (mapOfDraw.containsKey(key)) {
-            int colorValue = mapOfDraw.get(key);
-
-            return colorValue > maxCubes;
-        }
-        return false;
     }
 }
