@@ -1,6 +1,5 @@
 package adventofcode.day2;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -10,12 +9,7 @@ public class GameResultParser {
     private static final Map<String, Integer> CUBE_LIMIT;
 
     static {
-        Map<String, Integer> tempMap = new HashMap<>();
-        tempMap.put("red", 12);
-        tempMap.put("green", 13);
-        tempMap.put("blue", 14);
-
-        CUBE_LIMIT = Collections.unmodifiableMap(tempMap);
+        CUBE_LIMIT = Map.of("red", 12, "green", 13, "blue", 14);
     }
 
     String returnGameResults(String input) {
@@ -86,9 +80,7 @@ public class GameResultParser {
         if (mapOfDraw.containsKey(key)) {
             int colorValue = mapOfDraw.get(key);
 
-            if (colorValue > maxCubes) {
-                return true;
-            }
+            return colorValue > maxCubes;
         }
         return false;
     }
