@@ -10,8 +10,8 @@ public class CubeChecker {
     private final CubeLimitChecker cubeLimitChecker = new CubeLimitChecker();
     private static final CubePowerChecker CUBE_POWER_CHECKER = new CubePowerChecker();
 
-    public String getGameId(String s) { return gameResultParser.returnGameId(s); }
-    public boolean exceedsMaximumCubes(String s) { return cubeLimitChecker.isLessThanAllowedMax(s); }
+    private String getGameId(String gameResult) { return gameResultParser.returnGameId(gameResult); }
+    public boolean exceedsMaximumCubes(String gameResult) { return cubeLimitChecker.isLessThanAllowedMax(gameResult); }
 
     public int returnTotalValidIds(Supplier<Stream<String>> dataSupplier) { return calulcateTotalValidIds(dataSupplier.get()); }
     public int returnTotalValidIds(String... inputData) {
@@ -32,7 +32,7 @@ public class CubeChecker {
         }
         return totalOfGameIDs;
     }
-
+//TODO homewprk stream this
     private int calculatePowerOfMinimumCubes(Stream<String> stringStream) {
         int totalPower = 0;
 
