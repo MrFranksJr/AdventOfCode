@@ -3,7 +3,7 @@ package adventofcode.day2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CubeMinPowerChecker {
+public class CubePowerChecker {
     private final GameResultParser gameResultParser = new GameResultParser();
 
     public Map<String, Integer> returnMinimumRequiredCubes(String input) {

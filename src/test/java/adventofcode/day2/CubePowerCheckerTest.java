@@ -8,10 +8,10 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CubeMinPowerCheckerTest {
-    private CubeMinPowerChecker cubeMinPowerChecker;
+public class CubePowerCheckerTest {
+    private CubePowerChecker cubePowerChecker;
     @BeforeEach
-    void setUp() { cubeMinPowerChecker = new CubeMinPowerChecker(); }
+    void setUp() { cubePowerChecker = new CubePowerChecker(); }
     @Test
     void returnsMinimumRequiredCubes() {
         //input
@@ -22,7 +22,7 @@ public class CubeMinPowerCheckerTest {
         expectedHashMap.put("green", 3);
         expectedHashMap.put("blue", 15);
 
-        assertEquals(expectedHashMap, cubeMinPowerChecker.returnMinimumRequiredCubes(input));
+        assertEquals(expectedHashMap, cubePowerChecker.returnMinimumRequiredCubes(input));
     }
     @Test
     void returnsMinimumRequiredCubes2() {
@@ -34,7 +34,7 @@ public class CubeMinPowerCheckerTest {
         expectedHashMap.put("green", 3);
         expectedHashMap.put("blue", 4);
 
-        assertEquals(expectedHashMap, cubeMinPowerChecker.returnMinimumRequiredCubes(input));
+        assertEquals(expectedHashMap, cubePowerChecker.returnMinimumRequiredCubes(input));
     }
     @Test
     void multipliesMinimumCubes() {
@@ -45,6 +45,6 @@ public class CubeMinPowerCheckerTest {
         input.put("blue", 4);
         //expected
         int expectedResult = 12;
-        assertEquals(expectedResult, cubeMinPowerChecker.multiplyCubes(input));
+        assertEquals(expectedResult, cubePowerChecker.multiplyCubes(input));
     }
 }
