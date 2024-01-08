@@ -1,11 +1,8 @@
 package adventofcode.day2;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CubeChecker {
@@ -15,19 +12,13 @@ public class CubeChecker {
     public String getGameId(String s) { return gameResultParser.returnGameId(s); }
     public boolean exceedsMaximumCubes(String s) { return cubeLimitChecker.isLessThanAllowedMax(s); }
 
-    public int returnTotalValidIds(Supplier<Stream<String>> dataSupplier) {
-        return calulcateTotalValidIds(dataSupplier.get());
-    }
+    public int returnTotalValidIds(Supplier<Stream<String>> dataSupplier) { return calulcateTotalValidIds(dataSupplier.get()); }
     public int returnTotalValidIds(String... inputData) {
         return calulcateTotalValidIds(Arrays.stream(inputData));
     }
 
-    public int returnPowerOfMinimumCubes(Supplier<Stream<String>> dataSupplier) {
-        return calculatePowerOfAllCubes(dataSupplier.get());
-    }
-    public int returnPowerOfMinimumCubes(String... inputData) {
-        return calculatePowerOfAllCubes(Arrays.stream(inputData));
-    }
+    public int returnPowerOfMinimumCubes(Supplier<Stream<String>> dataSupplier) { return calculatePowerOfAllCubes(dataSupplier.get()); }
+    public int returnPowerOfMinimumCubes(String... inputData) { return calculatePowerOfAllCubes(Arrays.stream(inputData)); }
 
     private int calulcateTotalValidIds(Stream<String> stringStream) {
         int totalOfGameIDs = 0;
